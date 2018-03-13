@@ -2,23 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>
+        {% block title %}
+            Welcome!
+        {% endblock %}
+    </title>
     {% block stylesheets %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
               crossorigin="anonymous">
-        <style>
-            #list{
-                background: #fff;
-                padding-top: 15px;
-                padding-bottom: 15px;
-                margin-bottom: 30px;
-            }
-            p{
-                text-align: left;
-                margin-bottom: 5px;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     {% endblock %}
 </head>
 <body>
@@ -35,16 +28,15 @@
     <section class="jumbotron text-center">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div id="list" class="col-lg-12 col-md-12 col-sm-12 border rounded"></div>
-                </div>
+                <div id="list" class="col-lg-12 col-md-12 col-sm-12 rounded message-list"></div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-8">
-                    <textarea id="message-box" class="form-control" rows="5" style="resize:none;"></textarea>
+                <div class="col-lg-9 col-md-9 col-sm-9">
+                    <textarea id="message-box" class="form-control" rows="3" style="resize:none;"></textarea>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="col-lg-3 col-md-3 col-sm-3">
                     <button id="send" type="button" class="btn btn-lg btn-block btn-outline-primary">Send</button>
+                    <small class="text-muted">Shift + Enter to send</small>
                 </div>
             </div>
         </div>
