@@ -29,6 +29,6 @@ var button = document.getElementById('send');
 button.onclick = function (ev) {
     var text = document.getElementById('message-box').value;
     if(text.length > 0){
-        socket.send(text);
+        socket.send(JSON.stringify(text));
     }
 }
